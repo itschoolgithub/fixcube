@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cube {
+    position: relative;
+    width: 255px;
+    height: 239px;
+}
+
+.face {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    position: absolute;
+}
+
+.left {
+    transform: scaleY(0.9) scaleX(0.71) skewY(17.5deg);
+    left: 0;
+    bottom: 0;
+}
+
+.right {
+    transform: scaleY(0.9) scaleX(0.71) skewY(-17.5deg);
+    right: 0;
+    bottom: 0;
+}
+
+.top {
+    top: 0;
+    left: 50%;
+    transform: scaleY(0.4) translateX(-50%) rotate(45deg);
+}
+
+.face > div {
+    border: 1px solid black;
+}
+
+#red,
+.red,
+#cube #top div.red {
+    background-color: red!important;
+}
+
+#blue,
+.blue,
+#cube #right .blue {
+    background-color: blue!important;
+}
+
+#green,
+.green,
+#left .green {
+    background-color: green!important;
+}
+
+#yellow,
+.yellow,
+#body #cube #left #yellow {
+    background-color: yellow!important;
+}
+
+#orange,
+.orange,
+html body#body div#cube.cube div#top.face.top div#orange.orange {
+    background-color: orange!important;
+}
+
+#white,
+.white,
+#cube .white,
+body #right.face #white.white {
+    background-color: white!important;
+}
+
+
