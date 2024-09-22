@@ -5,9 +5,7 @@ const needColors = {
     top: 'rgb(255, 255, 0)',
 };
 
-setInterval(() => {
-    checkColors();
-}, 500);
+checkColors();
 
 function checkColors() {
     squares.forEach(square => {
@@ -26,4 +24,16 @@ function checkColors() {
             square.classList.remove('blink');
         }
     });
+
+    calcProgress();
+
+    setTimeout(() => {
+        checkColors();
+    }, 500);
+}
+
+function calcProgress () {
+    const correct = document.querySelectorAll(".face > .blink")
+    let progress = Math.floor((correct.length-3) * 100 / 24);
+    document.querySelector('.progress').innerText = progress + '%';
 }

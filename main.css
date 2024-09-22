@@ -11,6 +11,15 @@ body {
     height: 100vh;
 }
 
+.progress {
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
 .cube {
     position: relative;
     width: 255px;
