@@ -83,4 +83,17 @@ body #right.face #white.white {
     background-color: white!important;
 }
 
+.blink {
+    animation: blink .5s alternate infinite both linear;
+    border: 1px solid white!important;
+}
 
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
