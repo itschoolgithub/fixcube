@@ -22,8 +22,8 @@ body {
 
 .cube {
     position: relative;
-    width: 255px;
-    height: 239px;
+    width: 265px;
+    height: 250px;
 }
 
 .face {
@@ -31,78 +31,76 @@ body {
     grid-template-columns: repeat(3, 50px);
     grid-template-rows: repeat(3, 50px);
     position: absolute;
+    background: #342929;
+    border: 3px solid #342929;
+    border-radius: 4px;
 }
 
 .left {
-    transform: scaleY(0.9) scaleX(0.71) skewY(17.5deg);
     left: 0;
     bottom: 0;
+    transform: rotateX(30deg) rotatey(45deg) rotatez(0deg);
 }
 
 .right {
-    transform: scaleY(0.9) scaleX(0.71) skewY(-17.5deg);
     right: 0;
     bottom: 0;
+    transform: rotateX(-30deg) rotatey(45deg) rotatez(0deg);
 }
 
 .top {
     top: 0;
     left: 50%;
-    transform: scaleY(0.4) translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotateX(60deg) rotatey(0deg) rotatez(45deg);
+}
+
+.cube:before,
+.left:before,
+.top:before,
+.top:after {
+    content: "";
+    background-color: #342929;
+    position: absolute;
+}
+
+.cube:before {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+.left:before,
+.top:before {
+    height: 100%;
+    width: 2px;
+    right: -4px;
+}
+
+.top:after {
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
 }
 
 .face > div {
-    border: 1px solid black;
-}
-
-#red,
-.red,
-#cube #top div.red {
-    background-color: red!important;
-}
-
-#blue,
-.blue,
-#cube #right .blue {
-    background-color: blue!important;
-}
-
-#green,
-.green,
-#left .green {
-    background-color: green!important;
-}
-
-#yellow,
-.yellow,
-#body #cube #left #yellow {
-    background-color: yellow!important;
-}
-
-#orange,
-.orange,
-html body#body div#cube.cube div#top.face.top div#orange.orange {
-    background-color: orange!important;
-}
-
-#white,
-.white,
-#cube .white,
-body #right.face #white.white {
-    background-color: white!important;
+    margin: 3px;
+    border-radius: 2px;
 }
 
 .blink {
-    animation: blink .5s alternate infinite both linear;
-    border: 1px solid white!important;
+    animation: blink 1s infinite both linear;
 }
 
 @keyframes blink {
     0% {
-        opacity: 1;
+        /* opacity: .5; */
+        border: 20px solid #ffffff12;
     }
 
     100% {
-        opacity: .5;
+        border: 0px solid #ffffff80;
+        /* opacity: 1; */
     }
 }
